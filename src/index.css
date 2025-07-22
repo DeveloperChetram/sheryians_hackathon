@@ -44,7 +44,7 @@ body {
    
   }
   .cercular-text{
-    top: 20%;
+    top: 600px;
   }
   .hero-text{
     flex-direction: column;
@@ -53,6 +53,9 @@ body {
   .hero-text div{
     width: 100%;
     padding: 5px;
+  }
+  .video-text h1{
+    scale: 1;
   }
 }
 
