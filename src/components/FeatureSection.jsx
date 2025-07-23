@@ -33,7 +33,7 @@ useEffect(() => {
         start: 'top 60%',
         end: 'bottom 30%',
         scrub: true, // Enables scroll syncing
-        markers: true // Optional: for debugging
+        // markers: true // Optional: for debugging
       }
     });
 
