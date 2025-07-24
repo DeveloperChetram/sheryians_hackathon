@@ -39,7 +39,7 @@ const HeroVideo = () => {
         ease: 'power1.inOut',
         duration: 2, 
       },
-      '<' // The "<" starts this animation at the same time as the previous one
+      '<' 
     );
     }, containerRef); 
 
@@ -58,6 +58,7 @@ const HeroVideo = () => {
           autoPlay
           muted
           loop
+          id='heroVideo'
           className="w-full h-screen object-cover"
         />
 
