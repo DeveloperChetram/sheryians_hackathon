@@ -1,8 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { gsap } from 'gsap';
 
-const THEME_COLOR = '#ff4d24';
-
 const BuyNowModal = ({ open, product, onClose, onOrderSuccess }) => {
   const [name, setName] = useState('');
   const [step, setStep] = useState('form');
@@ -13,7 +11,6 @@ const BuyNowModal = ({ open, product, onClose, onOrderSuccess }) => {
 
   useEffect(() => {
     // This effect ensures the modal is in a clean, default state every time it opens.
-    // This fixes the "sticky state" glitch.
     if (open) {
       setStep('form');
       setName('');
@@ -78,7 +75,7 @@ const BuyNowModal = ({ open, product, onClose, onOrderSuccess }) => {
     <div
       ref={modalRef}
       className=" theme-font fixed inset-0 z-[99999] items-center justify-center hidden"
-      style={{ background: `rgba(255, 77, 36, ${open ? 0.9 : 0})` }}
+      style={{ background: `rgba(255, 77, 36, 0.9)` }}
       onClick={onClose}
     >
       <div 
@@ -112,16 +109,15 @@ const BuyNowModal = ({ open, product, onClose, onOrderSuccess }) => {
           </button>
         </div>
         
-        {step === 'success' && (
-          <div ref={successRef} className="absolute inset-0 flex flex-col items-center justify-center text-center p-8 invisible">
-            <h2 className="text-6xl font-extrabold text-green-500 mb-4">Success!</h2>
-            <p className="theme-font font-medium text-lg text-gray-700">
-              Thank you, <span className="font-bold text-black">{name}</span>!
-              <br/>
-              Your order for <span className="font-bold text-black">{product?.title}</span> is confirmed.
-            </p>
-          </div>
-        )}
+        {/* Success message is now always rendered but hidden by default */}
+        <div ref={successRef} className="absolute inset-0 flex flex-col items-center justify-center text-center p-8 invisible">
+          <h2 className="text-6xl font-extrabold text-green-500 mb-4">Success!</h2>
+          <p className="theme-font font-medium text-lg text-gray-700">
+            Thank you, <span className="font-bold text-black">{name}</span>!
+            <br/>
+            Your order for <span className="font-bold text-black">{product?.title}</span> is confirmed.
+          </p>
+        </div>
       </div>
     </div>
   );

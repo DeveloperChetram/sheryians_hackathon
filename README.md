@@ -1,12 +1,37 @@
-# React + Vite
+# Sheryians Cohort Hackathon Project
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Overview
+This is the frontend repository for the Sheryians Cohort Hackathon project. The project demonstrates modern web development practices and showcases the skills learned during the cohort.
 
-Currently, two official plugins are available:
+## Features
+- Modern web interface
+- Responsive design
+- Interactive user experience
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Technologies Used
+- HTML5
+- CSS3
+- JavaScript
+- React.js (if applicable)
 
-## Expanding the ESLint configuration
+## Getting Started
+1. Clone the repository
+2. Install dependencies: `npm install`
+3. Start development server: `npm start`
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Project Structure
+```
+frontend/
+├── src/
+├── public/
+└── README.md
+```
+
+## Contributing
+Please read CONTRIBUTING.md for details on our code of conduct and the process for submitting pull requests.
+
+## Authors
+- Your Name
+
+## License
+This project is licensed under the MIT License - see the LICENSE.md 
