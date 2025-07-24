@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from 'react';
+import  { useRef, useEffect, useState } from 'react';
 import { gsap } from 'gsap';
 
 const images = [
@@ -40,11 +40,11 @@ const Footer = () => {
 
        
         if (width >= 768) {
-          // --- DESKTOP RADIUS ---
+
 
           setRadius(width*2);
         } else {
-          // --- MOBILE RADIUS ---
+        
 
           setRadius(width / 2.5);
         }

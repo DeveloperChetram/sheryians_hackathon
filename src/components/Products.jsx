@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from 'react';
+import  { useRef, useEffect, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import BuyNowModal from './BuyNowModal';
@@ -43,7 +43,6 @@ const Products = () => {
 
     useEffect(() => {
         const ctx = gsap.context(() => {
-            // Scroll-triggered card reveal animation
             const scrollTl = gsap.timeline({
                 scrollTrigger: {
                     trigger: containerRef.current,
@@ -59,19 +58,15 @@ const Products = () => {
                 ease: 'power3.out'
             });
 
-            // Helper function for hover animations on each card
             const setupHoverAnimation = (cardElement) => {
                 if (!cardElement) return;
 
-                // Select elements for animation
                 const hoverTitle = cardElement.querySelector('.hover-title');
                 const hoverImage = cardElement.querySelector('.hover-image');
                 const buyButton = cardElement.querySelector('.buy-button');
 
-                // Create a paused timeline for the hover effect
                 const hoverTl = gsap.timeline({ paused: true });
 
-                // Add animations for a smooth, staggered effect on hover
                 hoverTl
                     .fromTo(hoverTitle,
                         { opacity: 0, y: -20 },
@@ -80,12 +75,12 @@ const Products = () => {
                     .fromTo(hoverImage,
                         { opacity: 0, scale: 0.8, y: 30 },
                         { opacity: 1, scale: 1, y: 0, duration: 0.4, ease: 'power3.out' },
-                        "-=0.3" // Stagger animation start
+                        "-=0.3" 
                     )
                     .fromTo(buyButton,
                         { opacity: 0, y: 20 },
                         { opacity: 1, y: 0, duration: 0.4, ease: 'power3.out' },
-                        "-=0.3" // Stagger animation start
+                        "-=0.3" 
                     );
 
                 const onEnter = () => hoverTl.play();
@@ -94,21 +89,19 @@ const Products = () => {
                 cardElement.addEventListener('mouseenter', onEnter);
                 cardElement.addEventListener('mouseleave', onLeave);
 
-                // Cleanup function to remove event listeners
+            
                 return () => {
                     cardElement.removeEventListener('mouseenter', onEnter);
                     cardElement.removeEventListener('mouseleave', onLeave);
                 };
             };
 
-            // Apply hover animation to each card
             setupHoverAnimation(card1Ref.current);
             setupHoverAnimation(card2Ref.current);
             setupHoverAnimation(card3Ref.current);
 
         }, containerRef);
 
-        // Cleanup GSAP context and animations
         return () => ctx.revert();
     }, []);
 

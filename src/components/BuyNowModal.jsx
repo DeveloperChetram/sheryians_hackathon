@@ -10,7 +10,6 @@ const BuyNowModal = ({ open, product, onClose, onOrderSuccess }) => {
   const successTl = useRef(null);
 
   useEffect(() => {
-    // This effect ensures the modal is in a clean, default state every time it opens.
     if (open) {
       setStep('form');
       setName('');
@@ -45,7 +44,7 @@ const BuyNowModal = ({ open, product, onClose, onOrderSuccess }) => {
       onComplete: () => {
         setTimeout(() => {
           if (onOrderSuccess) onOrderSuccess();
-        }, 2000); // User sees the success message for 2 seconds
+        }, 2000);
       }
     })
     .to(formRef.current, {
@@ -109,7 +108,6 @@ const BuyNowModal = ({ open, product, onClose, onOrderSuccess }) => {
           </button>
         </div>
         
-        {/* Success message is now always rendered but hidden by default */}
         <div ref={successRef} className="absolute inset-0 flex flex-col items-center justify-center text-center p-8 invisible">
           <h2 className="text-6xl font-extrabold text-green-500 mb-4">Success!</h2>
           <p className="theme-font font-medium text-lg text-gray-700">

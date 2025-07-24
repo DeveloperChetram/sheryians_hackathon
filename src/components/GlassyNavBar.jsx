@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from 'react';
+import  { useRef, useState, useEffect } from 'react';
 import { gsap } from 'gsap';
 
 const getResponsiveWidth = () => {
@@ -101,7 +101,6 @@ const GlassyNavBar = ({  onDiscover, onInfoClick, onBuyClick }) => {
             </div>
           </div>
 
-          {/* Right Side Items */}
           <div className="flex flex-wrap items-center space-x-1 sm:space-x-2 mt-1 sm:mt-0">
             <button 
               className="nav-item px-2 sm:px-4 py-1 sm:py-2 rounded-full hover:bg-[#ec5a16] cursor-pointer  text-white transition-all duration-300 text-sm sm:text-base"

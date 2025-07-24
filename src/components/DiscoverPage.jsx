@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react';
+import  { useRef, useEffect } from 'react';
 import Spline from '@splinetool/react-spline';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -36,7 +36,6 @@ export default function DiscoverPage({ onClose }) {
         ×
       </button>
       
-      {/* Text content takes up half the width on desktop to make space for the fixed model */}
       <div className="lg:w-1/2">
         <div className="relative z-10 mx-auto max-w-xl p-8 lg:py-40">
           <section className="min-h-screen lg:min-h-0 lg:h-auto flex flex-col justify-center text-left mb-32 lg:mb-64">
@@ -58,7 +57,6 @@ export default function DiscoverPage({ onClose }) {
         </div>
       </div>
 
-      {/* 3D Model Container: A normal block on mobile, but a fixed panel on desktop */}
       <div className="relative w-full h-[60vh] lg:fixed lg:top-0 lg:right-0 lg:w-1/2 lg:h-screen">
         <div className="absolute w-full h-full -top-10 -right-0 sm:-right-1/4 lg:-right-[25%]">
           <Spline scene="https://prod.spline.design/VvhFTCX5M9PKkaRF/scene.splinecode" />
